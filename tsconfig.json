@@ -13,21 +13,33 @@
     "isolatedModules": true,
     "esModuleInterop": true,
     "sourceMap": true,
-    "declaration": false,
+    "declaration": true, // Ativa a geração de arquivos de declaração .d.ts
     "experimentalDecorators": true,
-    "moduleResolution": "bundler",
+    "moduleResolution": "node", // Melhor compatibilidade de módulos
     "importHelpers": true,
     "target": "ES2022",
     "module": "ES2022",
     "lib": [
       "ES2022",
       "dom"
-    ]
+    ],
+    "strictNullChecks": true, // Adiciona verificação estrita para valores nulos
+    "noUnusedLocals": true,   // Remove variáveis locais não usadas
+    "noUnusedParameters": true, // Remove parâmetros de funções que não são usados
+    "types": ["mocha", "chai"] // Adiciona tipos para Mocha e Chai
   },
   "angularCompilerOptions": {
     "enableI18nLegacyMessageIdFormat": false,
     "strictInjectionParameters": true,
     "strictInputAccessModifiers": true,
     "strictTemplates": true
-  }
+  },
+  "include": [
+    "src/**/*.ts",
+    "test/**/*.ts" // Inclui arquivos de teste
+  ],
+  "exclude": [
+    "node_modules",
+    "dist"
+  ]
 }
